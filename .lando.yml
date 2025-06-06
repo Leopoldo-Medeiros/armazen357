@@ -1,0 +1,27 @@
+name: armazen_cafe
+recipe: lamp
+config:
+  php: '8.2'
+  webroot: backend/public
+  database: mysql:8.0
+  node: true
+
+services:
+  appserver:
+    build_as_root:
+      - apt-get update
+      - a2enmod rewrite headers expires mime
+      - docker-php-ext-install pdo mbstring tokenizer xml curl
+    environment:
+      XDEBUG_MODE: off
+
+tooling:
+  composer:
+    service: appserver
+    cmd: "composer"
+  npm:
+    service: node
+    cmd: "npm"
+  yarn:
+    service: node
+    cmd: "yarn"
