@@ -1,4 +1,25 @@
+# IDE / Editor files
 .idea/
 *.iml
-*.swp
-*.swo
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Laravel specific
+.env
+.env.backup
+.env.example
+.env.testing
+.phpunit.result.cache
+Dockerfile
+docker-compose.override.yml
+
+# Node
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.DS_Store
+Thumbs.db
